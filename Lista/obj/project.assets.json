@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Curso de Progamação\\Lista\\Lista.csproj",
+      "projectUniqueName": "D:\\Curso de Progamação\\Senac-programador-sistemas\\Lista\\Lista.csproj",
       "projectName": "Lista",
-      "projectPath": "D:\\Curso de Progamação\\Lista\\Lista.csproj",
+      "projectPath": "D:\\Curso de Progamação\\Senac-programador-sistemas\\Lista\\Lista.csproj",
       "packagesPath": "C:\\Users\\bruno.lfsantos1\\.nuget\\packages\\",
-      "outputPath": "D:\\Curso de Progamação\\Lista\\obj\\",
+      "outputPath": "D:\\Curso de Progamação\\Senac-programador-sistemas\\Lista\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

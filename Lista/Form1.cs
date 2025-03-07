@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.Eventing.Reader;
 
 namespace Lista
@@ -119,24 +120,32 @@ namespace Lista
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            string letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
+            string letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string numeros = "0123456789";
+            string caracteresEspeciais = "!@#$%^&*()-_=+[]{}|;:,.<>?";
+            string SenhaNova = textBoxCriarSenha.Text;
             string Novousuario = textBoxEmail.Text;
             string Novasenha = textBoxCriarSenha.Text;
+            string todosOsCaracteres = letrasMinusculas + letrasMaiusculas + numeros + caracteresEspeciais;
+
+
+
             if (string.IsNullOrEmpty(Novousuario))
             {
                 labelEmailC.Text = "Email Obrigatório!!!";
                 labelEmailC.ForeColor = Color.Red;
+
                 
-
-
-
-                if (string.IsNullOrEmpty(Novasenha))
-                {
-                    labelSenhaC.Text = "Senha Obrigatória!!!!";
-                    labelSenhaC.ForeColor = Color.Red;
-                    return;
-                    
-                }
             }
+            if (string.IsNullOrEmpty(Novasenha))
+            {
+                labelSenhaC.Text = "Senha Obrigatória!!!!";
+                labelSenhaC.ForeColor = Color.Red;
+
+
+            }
+            
             bool PosicaonovosUsuarios = false;
 
             for (int i = 0; i < listausuario.Count; i++)
@@ -160,6 +169,70 @@ namespace Lista
             {
                 labelResultadocadastro.Text = "Usuario ja existe";
             }
+            if (Novasenha.Length < 8)
+            {
+
+                labelSenhaC.Text = "Minimo 8 caracteres";
+                 
+
+                
+            }
+            bool CaracteresEspecial = false;
+
+            for (int i = 0; i < listaSenhas.Count; i++)
+            {
+                
+                
+                if (Novasenha == listaSenhas[i])
+                {
+
+                    caracteresEspeciais.Contains(listaSenhas[i]);
+                    listaSenhas.Add(Novasenha);
+                }
+                if (Novasenha.Any(todosOsCaracteres => caracteresEspeciais.Contains(todosOsCaracteres)))
+                {
+                    labelSenhaC.Text = "Senha Boa";
+
+
+
+                }
+                else
+                {
+                    labelSenhaC.Text = "Senha Fraca";
+                }
+
+
+
+                if (!PosicaonovosUsuarios)
+                {
+                    listausuario.Add(Novousuario);
+                    listaSenhas.Add(Novasenha);
+                    labelResultadocadastro.Text = "Cadastrado com sucesso";
+                }
+                else
+                {
+                    labelResultadocadastro.Text = "Usuario ja existe";
+                }
+
+
+
+
+            }
+
+
+
+            
+
+
+
+            
+
+
+
+
+
+
+
 
 
         }
