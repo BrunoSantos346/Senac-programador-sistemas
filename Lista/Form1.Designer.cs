@@ -105,8 +105,7 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(383, 23);
             textBoxEmail.TabIndex = 7;
-            textBox1_TextChanged(this, new EventArgs());
-
+            textBoxEmail.TextChanged += textBoxEmail_TextChanged;
             // 
             // textBoxCriarSenha
             // 

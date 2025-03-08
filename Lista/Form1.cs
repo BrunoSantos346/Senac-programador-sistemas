@@ -10,10 +10,6 @@ namespace Lista
             InitializeComponent();
         }
 
-        private const int V = -1;
-        private const string V1 = "Usuario Criado";
-        List<string> listausuario = new List<string>() { "Neymar jr", "Pablo vitar", "Sukuna silva", "Bruno" };
-        List<string> listaSenhas = new List<string>() { "Bruna", "1234", "777", };
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -26,220 +22,150 @@ namespace Lista
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<string> alfabetoMaiusculo = new List<string>() { "A", "B", "C", "D", "E" };
+            List<string> alfabetoMinusculo = new List<string>() { "a", "b", "c", "d", "e" };
+            List<char> numeros = new List<char>() { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+            List<char> especiais = new List<char>() { '!', '@', '#', '$', '%', '&', '*' };
 
-            string UsuarioBuscado = textBoxUsuario.Text;
-            string senha = textBoxSenha.Text;
+            List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.vitar", "sukuna.silva" };
+            List<string> listaSenhas = new List<string>() { "Brun@123", "12345Abc!", "Sete7Sete!" };
 
-            if (string.IsNullOrEmpty(UsuarioBuscado))
+
+            string novoUsuario = textBoxUsuario.Text;
+            string novaSenha = textBoxSenha.Text;
+
+
+
+            
             {
-                labelUsuario.Text = "Usuario Obrigatório!!!";
-                labelUsuario.ForeColor = Color.Red;
+
+
+            if (string.IsNullOrWhiteSpace(novoUsuario))
+            {
+                labelUsuario.Text = "Usuario eh obrigatorio!!!";
+                labelResultado.Text = "Usuario eh obrigatorio!!!";
                 return;
             }
-            if (string.IsNullOrEmpty(senha))
+
+            if (string.IsNullOrWhiteSpace(novaSenha))
             {
-                labelSenha.Text = "Senha Obrigatória!!";
-                labelSenha.ForeColor = Color.Red;
+                labelSenha.Text = "Senha eh obrigatoria!!!";
+                labelResultado.Text = "Senha eh obrigatoria!!!";
+                return;
             }
 
-            int posicaodousuario = -1;
-
-            for (int i = 0; i < listausuario.Count; i++)
-            {
-                if (UsuarioBuscado == listausuario[i])
+            bool usuarioEncontrado = false;
+            for (int i = 0; i < listaUsuarios.Count; i++)
+                if (novaSenha.Length < 8)
                 {
-                    posicaodousuario = i;
+                    if (novoUsuario == listaUsuarios[i])
+                    {
+                        usuarioEncontrado = true;
+                    }
+                    labelResultado.Text = "A senha deve ter pelo menos 8 caracteres";
+                    return;
                 }
 
-                if (posicaodousuario > -1 && senha == listaSenhas[posicaodousuario])
+            if (!usuarioEncontrado)
+                if (!novaSenha.Any(char.IsUpper))
                 {
-                    labelResultado.Text = "Autenticado com Sucesso";
-                    labelResultado.ForeColor = Color.Green;
-                }
-                else
-                {
-                    labelResultado.Text = "Usuario ou senha incorretos!!!!";
-                    labelResultado.ForeColor = Color.Red;
-                }
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelResultadocadastro_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            string letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
-            string letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            string numeros = "0123456789";
-            string caracteresEspeciais = "!@#$%^&*()-_=+[]{}|;:,.<>?";
-            string SenhaNova = textBoxCriarSenha.Text;
-            string Novousuario = textBoxEmail.Text;
-            string Novasenha = textBoxCriarSenha.Text;
-            string todosOsCaracteres = letrasMinusculas + letrasMaiusculas + numeros + caracteresEspeciais;
-
-
-
-            if (string.IsNullOrEmpty(Novousuario))
-            {
-                labelEmailC.Text = "Email Obrigatório!!!";
-                labelEmailC.ForeColor = Color.Red;
-
-                
-            }
-            if (string.IsNullOrEmpty(Novasenha))
-            {
-                labelSenhaC.Text = "Senha Obrigatória!!!!";
-                labelSenhaC.ForeColor = Color.Red;
-
-
-            }
-            
-            bool PosicaonovosUsuarios = false;
-
-            for (int i = 0; i < listausuario.Count; i++)
-            {
-
-                if (Novousuario == listausuario[i])
-                {
-                   
-                    PosicaonovosUsuarios = true;
-                    
-                }
-
-            }
-            if(!PosicaonovosUsuarios)
-            {
-                listausuario.Add(Novousuario);
-                listaSenhas.Add(Novasenha);
-                labelResultadocadastro.Text = "Cadastrado com sucesso";
-            }
-            else
-            {
-                labelResultadocadastro.Text = "Usuario ja existe";
-            }
-            if (Novasenha.Length < 8)
-            {
-
-                labelSenhaC.Text = "Minimo 8 caracteres";
-                 
-
-                
-            }
-            bool CaracteresEspecial = false;
-
-            for (int i = 0; i < listaSenhas.Count; i++)
-            {
-                
-                
-                if (Novasenha == listaSenhas[i])
-                {
-
-                    caracteresEspeciais.Contains(listaSenhas[i]);
-                    listaSenhas.Add(Novasenha);
-                }
-                if (Novasenha.Any(todosOsCaracteres => caracteresEspeciais.Contains(todosOsCaracteres)))
-                {
-                    labelSenhaC.Text = "Senha Boa";
-
-
-
+                    listaUsuarios.Add(novoUsuario);
+                    listaSenhas.Add(novaSenha);
+                    labelEmailC.Text = "Usuário cadastrado com sucesso!";
+                    labelResultado.Text = "A senha deve ter pelo menos uma letra maiuscula";
+                    return;
                 }
                 else
+
+                if (!novaSenha.Any(char.IsLower))
                 {
-                    labelSenhaC.Text = "Senha Fraca";
+                    labelResultado.Text = "A senha deve ter pelo menos uma letra minuscula";
+                    return;
                 }
 
-
-
-                if (!PosicaonovosUsuarios)
-                {
-                    listausuario.Add(Novousuario);
-                    listaSenhas.Add(Novasenha);
-                    labelResultadocadastro.Text = "Cadastrado com sucesso";
-                }
-                else
-                {
-                    labelResultadocadastro.Text = "Usuario ja existe";
-                }
-
-
-
-
+            if (!novaSenha.Any(char.IsDigit))
+            {
+                labelEmailC.Text = "Já existe um usuário cadastrado";
+                labelResultado.Text = "A senha deve ter pelo menos um numero";
+                return;
             }
 
+            if (!novaSenha.Any(char.IsPunctuation))
+            {
+                labelResultado.Text = "A senha deve ter pelo menos um caracter especial";
+                return;
+            }
 
+            if (novaSenha.Contains(' '))
+            {
+                labelResultado.Text = "A senha nao deve ter espacos em branco";
+                return;
+            }
 
-            
+            if (listaUsuarios.Contains(novoUsuario))
+            {
+                labelResultado.Text = "Já existe um usuário cadastrado";
+                return;
+            }
 
-
-
-            
-
-
-
-
-
-
-
-
-
+            listaUsuarios.Add(novoUsuario);
+            listaSenhas.Add(novaSenha);
+            labelResultado.Text = "Usuário cadastrado com sucesso!";
+            textBoxEmail.Clear();
+            textBoxSenha.Clear();
         }
-
-
     }
+}
+
+
+            
+            
+              
+            
+            
+
+            
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

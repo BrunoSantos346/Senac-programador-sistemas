@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Lista")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Usuario")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43c10477660b350596f789a9cf4f19ddcb102f8b")]
-[assembly: System.Reflection.AssemblyProductAttribute("Lista")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Lista")]
+[assembly: System.Reflection.AssemblyProductAttribute("Usuario")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Usuario")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

@@ -1,0 +1,17 @@
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\bin\Debug\net8.0-windows\Usuario.exe
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\bin\Debug\net8.0-windows\Usuario.deps.json
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\bin\Debug\net8.0-windows\Usuario.runtimeconfig.json
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\bin\Debug\net8.0-windows\Usuario.dll
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\bin\Debug\net8.0-windows\Usuario.pdb
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.Form1.resources
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.csproj.GenerateResource.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.AssemblyInfoInputs.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.AssemblyInfo.cs
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.csproj.CoreCompileInputs.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.sourcelink.json
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.dll
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\refint\Usuario.dll
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.pdb
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\Usuario.genruntimeconfig.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Usuario\obj\Debug\net8.0-windows\ref\Usuario.dll
