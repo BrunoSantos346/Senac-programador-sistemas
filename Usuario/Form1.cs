@@ -1,10 +1,18 @@
 namespace Usuario
 {
     public partial class Form1 : Form
+        // Declaração de Classe
     {
+
+        List<Usuario> usuarios = new List<Usuario>();
+
         public Form1()
         {
             InitializeComponent();
+            usuarios.Add(new Usuario() { Email = "Neymar.jr@email.com", Senha = "Brun@123" });
+            usuarios.Add(new Usuario() { Email = "Pablo.vitar@email.com", Senha = "12345abc" });
+            usuarios.Add(new Usuario() { Email = "Sukuna.silva@email.com", Senha = "Sete7Sete" });
+
         }
 
         private const int V = -1;
@@ -12,6 +20,7 @@ namespace Usuario
 
         List<string> listausuario = new List<string>() { "Neymar jr", "Pablo vitar", "Sukuna silva", "Bruno" };
         List<string> listaSenhas = new List<string>() { "Bruna", "1234", "777", };
+
         // Usuario Cadastrado
 
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
@@ -30,7 +39,7 @@ namespace Usuario
 
         {
 
-            bool usuarioBuscado = false;
+            bool Autenticação = false;
             string Usuario = textBoxUsuario.Text;
             string Senha = textBoxSenha.Text;
 
@@ -59,13 +68,12 @@ namespace Usuario
                 labelSen.ForeColor = Color.Red;
                 return;
             }
-            for (int i = 0; i < listausuario.Count; i++)
+            for (int i = 0; i < usuarios.Count; i++)
             {
 
-                if (!usuarioBuscado)
+                if (usuarios[i].Email == Usuario && usuarios[i].Senha == Senha)
                 {
-                    labelUser.Text = "Usuario Não Existe!!";
-                    labelUser.ForeColor = Color.Red;
+                    Autenticação = true;
                 }
                 
                 
@@ -74,19 +82,19 @@ namespace Usuario
             }
             for(int i = 0;i < listaSenhas.Count;i++)
             {
-                if (!usuarioBuscado)
+                if (usuarioBuscado)
                 {
                     
                     labelSen.Text = "Senha Incorreta!!!";
                     labelSen.ForeColor = Color.Red;
-                    usuarioBuscado = false;
-                    continue;
+                    usuarioBuscado = true;
+                    
                 }
                 else
                 {
                     labelUsuario.Text = "Logado";
                     labelUsuario.ForeColor= Color.Green;
-                    usuarioBuscado = false;
+                    usuarioBuscado = true;
                 }
             }
 
