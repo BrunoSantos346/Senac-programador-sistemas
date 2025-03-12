@@ -28,24 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelResiltado2 = new Label();
+            Calcular = new Button();
+            textBoxAP = new TextBox();
+            comboBox1 = new ComboBox();
+            labelResultado = new Label();
             SuspendLayout();
             // 
-            // labelResiltado2
+            // Calcular
             // 
-            labelResiltado2.AutoSize = true;
-            labelResiltado2.Location = new Point(363, 243);
-            labelResiltado2.Name = "labelResiltado2";
-            labelResiltado2.Size = new Size(38, 15);
-            labelResiltado2.TabIndex = 0;
-            labelResiltado2.Text = "label1";
+            Calcular.Location = new Point(108, 311);
+            Calcular.Name = "Calcular";
+            Calcular.Size = new Size(129, 39);
+            Calcular.TabIndex = 0;
+            Calcular.Text = "Calcular";
+            Calcular.UseVisualStyleBackColor = true;
+            Calcular.Click += Calcular_Click;
+            // 
+            // textBoxAP
+            // 
+            textBoxAP.Location = new Point(81, 249);
+            textBoxAP.Name = "textBoxAP";
+            textBoxAP.Size = new Size(183, 23);
+            textBoxAP.TabIndex = 1;
+            textBoxAP.TextChanged += textBoxAP_TextChanged;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(350, 269);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 2;
+            // 
+            // labelResultado
+            // 
+            labelResultado.AutoSize = true;
+            labelResultado.Location = new Point(133, 391);
+            labelResultado.Name = "labelResultado";
+            labelResultado.Size = new Size(38, 15);
+            labelResultado.TabIndex = 3;
+            labelResultado.Text = "label1";
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(labelResiltado2);
+            Controls.Add(labelResultado);
+            Controls.Add(comboBox1);
+            Controls.Add(textBoxAP);
+            Controls.Add(Calcular);
             Name = "Form2";
             Text = "Form2";
             ResumeLayout(false);
@@ -54,6 +86,9 @@
 
         #endregion
 
-        private Label labelResiltado2;
+        private Button Calcular;
+        private TextBox textBoxAP;
+        private ComboBox comboBox1;
+        private Label labelResultado;
     }
 }

@@ -5,6 +5,13 @@ namespace Calculadora
         public Form1()
         {
             InitializeComponent();
+            comboBox1.Items.Add("Adição");
+            comboBox1.Items.Add("Subtração");
+            comboBox1.Items.Add("Divisão");
+            comboBox1.Items.Add("Multiplicação");
+            comboBox1.SelectedIndex = 0;
+
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -19,62 +26,79 @@ namespace Calculadora
 
         private void buttonCalcular_Click(object sender, EventArgs e)
         {
-            string primeiroNumero = textBoxV1.Text;
-            string segundoNumero = textBoxV2.Text;
-            char operacao = textBoxV2.Text[0];
 
-            double V1 = Convert.ToDouble(primeiroNumero);
-            double V2 = Convert.ToDouble(segundoNumero);
-
-            double resultado = V1 + V2;
-            labelReseultado.Text = resultado.ToString();
-
-
-            switch (operacao)
+            try
             {
 
-                case '+':
-                    resultado = V1 + V2;
-                    break;
-                case '-':
-                    resultado = V1 - V2;
-                    break;
-                case '*':
-                    resultado = V1 * V2;
-                    break;
-                case '/':
-                    if (V2 != 0)
-                    {
-                        resultado = V1 / V2;
-                    }
-                    else
-                    {
-                        labelReseultado.Text = "Erro: Divisão por zero!";
+
+
+
+                double numero1 = Convert.ToDouble(textBoxV2.Text);
+                double numero2 = Convert.ToDouble(textBoxV2.Text);
+                string operaçao2 = comboBox1.SelectedItem.ToString();
+                double resultado = 0;
+
+
+
+
+
+                labelReseultado.Text = resultado.ToString();
+
+
+                switch (operaçao2)
+                {
+
+
+                    case "Adição":
+                        resultado = numero1 + numero2;
+                        break;
+
+                    case "Subtração":
+                        resultado = numero1 - numero2;
+                        break;
+
+                    case "Multiplicação":
+                        resultado = numero1 * numero2;
+                        break;
+
+                    case "Divisão":
+
+                        resultado = numero1 / numero2;
+
+
+
+
+                        if (numero2 != 0)
+                        {
+                            resultado = numero1 / numero1;
+                        }
+                        else
+                        {
+                            labelReseultado.Text = "Erro: Divisão por zero!";
+                            return;
+                        }
+                        break;
+                    default:
+                        labelReseultado.Text = "Erro: Operação inválida!";
                         return;
-                    }
-                    break;
-                default:
-                    labelReseultado.Text = "Erro: Operação inválida!";
-                    return;
+                }
+
+                labelReseultado.Text = " Resultado " + resultado.ToString();
+
+
+                string resultado2 = labelReseultado.Text;
+            }
+            catch (Exception ex)
+            {
+                labelReseultado.Text += ex.Message;
+
             }
 
-            // Exibe o resultado no labelResultado
-            labelReseultado.Text = resultado.ToString();
-
-            string resultado2 = labelReseultado.Text;
-
-            Form2 novoForm = Form2();
-            novoForm.ShowDialog(labelReseultado);
-            this.Hide();
-
 
 
         }
 
-        private Form2 Form2()
-        {
-            throw new NotImplementedException();
-        }
+
 
         private void buttonAbrir_Click(object sender, EventArgs e)
         {
@@ -86,6 +110,34 @@ namespace Calculadora
         }
 
         private void labelReseultado_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+        private void buttonForm2_Click(object sender, EventArgs e)
+        {
+            InitializeComponent();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
+
+        }
+
+        private void labelReseultado_Click_2(object sender, EventArgs e)
         {
 
         }
