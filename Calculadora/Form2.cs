@@ -65,7 +65,7 @@
         {
             try
             {
-                // Verifica qual figura foi selecionada
+                // Verifica qual figura Foi Selecionada
                 if (comboBox2.SelectedItem.ToString() == "Retângulo")
                 {
                     // Para o retângulo, usamos largura e comprimento
