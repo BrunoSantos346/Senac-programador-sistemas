@@ -1,4 +1,5 @@
-﻿namespace WinFormsApp1
+﻿
+namespace WinFormsApp1
 {
     partial class Form1
     {
@@ -277,6 +278,46 @@
             Esfera.ResumeLayout(false);
             Esfera.PerformLayout();
             ResumeLayout(false);
+        }
+
+        private void radioButtonCircuferencia_CheckedChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void buttoncalcularEsfera_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void comboBoxOpçoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

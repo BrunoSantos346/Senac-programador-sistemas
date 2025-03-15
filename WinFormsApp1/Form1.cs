@@ -20,7 +20,7 @@ namespace WinFormsApp1
             {
                 string Resultado = labelResultadoCircun.Text;
                 string Perimetro = textBoxPerimetro.Text;
-               
+
 
                 if (string.IsNullOrEmpty(Perimetro) || !Perimetro.All(char.IsNumber))
                 {
@@ -58,59 +58,43 @@ namespace WinFormsApp1
                     {
                         labelErro.Text = "Insira um valor Válido";
                         labelErro.ForeColor = Color.Red;
-                        return ;
+                        return;
                     }
+                    labelErro.Text = "Insira um valor Válido";
+                    labelErro.ForeColor = Color.Red;
+                    return;
                 }
 
-                if (double.TryParse(textBoxPerimetro.Text, out double perimetro))
-
-                {
-                    double perimetroC =Convert.ToDouble(textBoxPerimetro.Text);
-
-                    if (double.TryParse(textBoxDiametro.Text, out double diametro))
-                    {
-                       double diametroC = Convert.ToDouble(textBoxDiametro.Text);
-
-                        if (double.TryParse(textBoxArea.Text, out double area))
-                        {
-                            double areaC = Convert.ToDouble(textBoxArea.Text);
-                            if (double.TryParse(textBoxRaio.Text, out area ))
-
-                            {
-                               double raioc = Convert.ToDouble(textBoxRaio.Text);
-                                double circunferencia = 2 * Math.PI * raioc;
-
-                                labelResultadoCircun.Text = $"Resultado:,{Circunferência}";
-                                labelResultadoCircun.ForeColor = Color.Green;
-                            }
-
-                        }
-                    }
 
 
-                }
+
 
 
 
             }
         }
 
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        private void radioButton2_CheckedChanged1(object sender, EventArgs e)
         {
-            textBoxArea.Enabled = true;
+            textBoxRaio.Enabled = true;
         }
 
-        private static void radioButtonCircuferencia_CheckedChanged(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged1(object sender, EventArgs e)
+        {
+            textBoxPerimetro.Enabled = true;
+        }
+
+        private void radioButton3_CheckedChanged1(object sender, EventArgs e)
+        {
+            textBoxDiametro.Enabled = true;
+        }
+
+        private static void buttoncalcularEsfera_Click1(object sender, EventArgs e)
         {
 
         }
 
-        private static void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxOpçoes_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxOpçoes_SelectedIndexChanged1(object sender, EventArgs e)
         {
             if (comboBoxOpçoes.SelectedItem == null)
             {
@@ -137,24 +121,19 @@ namespace WinFormsApp1
             }
         }
 
-        private static void buttoncalcularEsfera_Click(object sender, EventArgs e)
+        private static void textBox5_TextChanged1(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        private static void radioButtonCircuferencia_CheckedChanged1(object sender, EventArgs e)
         {
-            textBoxDiametro.Enabled = true;
+
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radioButton4_CheckedChanged1(object sender, EventArgs e)
         {
-            textBoxPerimetro.Enabled = true;
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            textBoxRaio.Enabled = true;
+            textBoxArea.Enabled = true;
         }
     } 
 }

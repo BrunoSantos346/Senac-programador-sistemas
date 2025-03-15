@@ -1,0 +1,17 @@
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\bin\Debug\net8.0-windows\Esfera.exe
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\bin\Debug\net8.0-windows\Esfera.deps.json
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\bin\Debug\net8.0-windows\Esfera.runtimeconfig.json
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\bin\Debug\net8.0-windows\Esfera.dll
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\bin\Debug\net8.0-windows\Esfera.pdb
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.Form1.resources
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.csproj.GenerateResource.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.AssemblyInfoInputs.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.AssemblyInfo.cs
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.csproj.CoreCompileInputs.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.sourcelink.json
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.dll
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\refint\Esfera.dll
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.pdb
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\Esfera.genruntimeconfig.cache
+D:\Curso de Progamação\Senac-programador-sistemas\Esfera\obj\Debug\net8.0-windows\ref\Esfera.dll
