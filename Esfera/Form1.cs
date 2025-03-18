@@ -7,6 +7,14 @@ namespace Esfera
             InitializeComponent();
         }
 
+        private bool validarform()
+        {
+            Erro.Text = "";
+            return false;
+        }
+
+
+
         private void Perimetro_CheckedChanged(object sender, EventArgs e)
         {
             textBoxCalculo.Enabled = true;
