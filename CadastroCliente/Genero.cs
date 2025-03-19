@@ -1,8 +1,7 @@
 ﻿using System;
 
-public class Class1
+enum GeneroCliente
 {
-	public Class1()
-	{
-	}
+    Masculino,
+    Feminino
 }

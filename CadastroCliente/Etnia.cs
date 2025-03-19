@@ -1,8 +1,12 @@
 ﻿using System;
 
-public class Class1
+ enum Etnia
 {
-	public Class1()
-	{
-	}
+    Branco,
+    Negro,
+    Outros
+
 }
+
+
+

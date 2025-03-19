@@ -5,6 +5,17 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroCliente", "CadastroCliente.csproj", "{5D3D5711-41D9-4B61-8FA6-8ADC6B2B7616}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{9BE42086-A119-4855-BDFB-236CC3ACF2E6}"
+	ProjectSection(SolutionItems) = preProject
+		Class1.cs = Class1.cs
+		Class2.cs = Class2.cs
+		Class3.cs = Class3.cs
+		Class4.cs = Class4.cs
+		Class5.cs = Class5.cs
+		Class6.cs = Class6.cs
+		Class7.cs = Class7.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
