@@ -48,7 +48,7 @@ namespace CadastroCliente
         {
             if (string.IsNullOrEmpty(textBoxNome.Text))
             {
-
+               
 
                 MessageBox.Show("O Nome é Obrigatório", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -87,9 +87,9 @@ namespace CadastroCliente
                 MessageBox.Show("!!!Não e Permitido o Uso de Caracteres!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (string.IsNullOrEmpty(Telefone.Text))
+            if (string.IsNullOrEmpty(TelefoneBox.Text))
             {
-                Telefone.Text = "(00) 00000000";
+                TelefoneBox.Text = "(00) 00000000";
                 MessageBox.Show("!!! Numero  de Telefone Obrigatorio!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -98,14 +98,60 @@ namespace CadastroCliente
                 MessageBox.Show("!!!Selecione uma da Opções!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            return true;
+            if(Etnia.SelectedIndex == -1)
+            {
+                MessageBox.Show("!!!Selecione uma Das opções de Etinia, Por favor!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if(string.IsNullOrEmpty(Logradouro.Text))
+            {
+                MessageBox.Show("!!!O campo 'Logradoro' é Obrigatório!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if(string.IsNullOrEmpty(Numero.Text))
+            {
+                Numero.Text = "0";
+                MessageBox.Show("\"!!!O campo 'Numero' é Obrigatório!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if(EstadoBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("!!!O campo 'Estado' é Obrigatório Selecione uma Das Opções!!!","Erro",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+            }
+            if(string.IsNullOrEmpty(Cep.Text))
+            {
+                Cep.Text = "00000-000";
+                MessageBox.Show("!!!O campo 'CEP' é Obrigatório!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrEmpty(Complemento.Text))
+            {
+                MessageBox.Show("!!!O campo 'Complemento' é Obrigatório!!!","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            }
+            if(string.IsNullOrEmpty(Municipio.Text))
+            {
+                MessageBox.Show("!!!O campo 'Municipio' é Obrigatório!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrEmpty(Bairro.Text))
+            {
+                MessageBox.Show("!!!O campo 'Bairro' é Obrigatório!!!","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("!!!Cadastro Realizado Com Sucesso!!!","Cadastro Finalizado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return true;
+            }
+            
 
 
 
         }
-
         public int ProximoID = 1;
-
         public int GeraID()
         {
             int NovoID = ProximoID;
@@ -113,14 +159,12 @@ namespace CadastroCliente
             return NovoID;
 
         }
-
-
         public string AtualizarCampos()
         {
             textBoxNome.Clear();
             textBoxEmail.Clear();
             textBoxNomeSocial.Clear();
-            Telefone.Clear();
+            TelefoneBox.Clear();
             Municipio.Clear();
             EstadoBox.Items.Clear();
             Genero.Items.Clear();
@@ -130,7 +174,6 @@ namespace CadastroCliente
 
             return textBoxNome.ToString();
         }
-
         public string AdicionarCliente ()
         {
             GeneroCliente GeneroSelecionado = (GeneroCliente)Genero.SelectedIndex;
@@ -138,30 +181,35 @@ namespace CadastroCliente
             TipoCliente Tipo = radioButtonPF.Checked ? TipoCliente.PF : TipoCliente.Pj;
 
             var Email = textBoxEmail.Text;
+            var Telefone = TelefoneBox.Text;
 
             Clientes.Add(new Cliente() { Nome = textBoxNome.Text, DataNascimento = DataNascimento.Text, GeneroCliente = GeneroSelecionado, Etnia = EtniaSelecionada, Tipo = Tipo, Estrageiro = checkBoxEstrageiro.Checked });
             Endereço.Add(new EndereçoCliente() { Bairro = Bairro.Text, Cep = Cep.Text, Complemento = Complemento.Text, Estado = EstadoBox.Text, Municipio = Municipio.Text, Logradouro = Logradouro.Text, Numero = Numero.Text });
             textBoxEmail.Clear();
             textBoxNome.Clear();
-            Telefone.Clear();
+            TelefoneBox.Clear();
             Bairro.Clear();
             Cep.Clear();
             Municipio.Clear();
             Complemento.Clear();
 
-            foreach (var clientes in Clientes)
+            foreach (Cliente cliente in Clientes)
             {
                 if (Email.Equals(Email, StringComparison.OrdinalIgnoreCase))
                 {
                     MessageBox.Show("!!!Esse Email Ja Foi Cadastrado!!!","Erro",MessageBoxButtons.OK, MessageBoxIcon.Error);
                     
                 }
+                if(Telefone.Equals(Telefone,StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("!!! Esse Numero Ja Esta Sendo Usado","Erro",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                }
 
 
-            }
-            return textBoxNome.Text;
+            }return textBoxEmail.ToString();
+            
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
           
