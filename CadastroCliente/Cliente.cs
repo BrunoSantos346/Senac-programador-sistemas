@@ -5,6 +5,21 @@ namespace CadastroCliente
 {
      class Cliente
      {
+        private string email;
+        private MaskedTextBox telefone;
+
+        public Cliente()
+        {
+        }
+
+        public Cliente(int id, string nome, string email, MaskedTextBox telefone)
+        {
+            ID = id;
+            Nome = nome;
+            this.email = email;
+            this.telefone = telefone;
+        }
+
         public TipoCliente Tipo { get; set; }
         public int ID { get; set; }
         public string Nome  { get; set; }
@@ -16,14 +31,7 @@ namespace CadastroCliente
         public bool Estrageiro { get; set; }
 
         
-        public bool ValidarNome()
-        {
-            return !string.IsNullOrEmpty (Nome);
-        }
-        public int ObterID()
-        {
-            return ID++;
-        }
+        
 
         
            

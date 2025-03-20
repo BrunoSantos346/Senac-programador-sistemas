@@ -42,9 +42,9 @@
             textBoxNomeSocial = new TextBox();
             Etnia = new ComboBox();
             label7 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            checkBox1 = new CheckBox();
+            radioButtonPF = new RadioButton();
+            radioButtonPJ = new RadioButton();
+            checkBoxEstrageiro = new CheckBox();
             label8 = new Label();
             label9 = new Label();
             Logradouro = new TextBox();
@@ -57,7 +57,7 @@
             label13 = new Label();
             label14 = new Label();
             Bairro = new TextBox();
-            Estado = new ComboBox();
+            EstadoBox = new ComboBox();
             label15 = new Label();
             Cep = new MaskedTextBox();
             label16 = new Label();
@@ -105,7 +105,7 @@
             // Telefone
             // 
             Telefone.Location = new Point(369, 124);
-            Telefone.Mask = "(999) 000-0000";
+            Telefone.Mask = "(99) 0000-0000";
             Telefone.Name = "Telefone";
             Telefone.Size = new Size(136, 23);
             Telefone.TabIndex = 6;
@@ -195,43 +195,43 @@
             label7.TabIndex = 15;
             label7.Text = "Etnia";
             // 
-            // radioButton1
+            // radioButtonPF
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.BackColor = SystemColors.ActiveCaptionText;
-            radioButton1.ForeColor = SystemColors.ButtonHighlight;
-            radioButton1.Location = new Point(13, 271);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(93, 19);
-            radioButton1.TabIndex = 16;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Pessoa Física";
-            radioButton1.UseVisualStyleBackColor = false;
+            radioButtonPF.AutoSize = true;
+            radioButtonPF.BackColor = SystemColors.ActiveCaptionText;
+            radioButtonPF.ForeColor = SystemColors.ButtonHighlight;
+            radioButtonPF.Location = new Point(13, 271);
+            radioButtonPF.Name = "radioButtonPF";
+            radioButtonPF.Size = new Size(93, 19);
+            radioButtonPF.TabIndex = 16;
+            radioButtonPF.TabStop = true;
+            radioButtonPF.Text = "Pessoa Física";
+            radioButtonPF.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // radioButtonPJ
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = SystemColors.ActiveCaptionText;
-            radioButton2.ForeColor = SystemColors.ButtonHighlight;
-            radioButton2.Location = new Point(136, 271);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(104, 19);
-            radioButton2.TabIndex = 17;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Pessoa Jurídica";
-            radioButton2.UseVisualStyleBackColor = false;
+            radioButtonPJ.AutoSize = true;
+            radioButtonPJ.BackColor = SystemColors.ActiveCaptionText;
+            radioButtonPJ.ForeColor = SystemColors.ButtonHighlight;
+            radioButtonPJ.Location = new Point(136, 271);
+            radioButtonPJ.Name = "radioButtonPJ";
+            radioButtonPJ.Size = new Size(104, 19);
+            radioButtonPJ.TabIndex = 17;
+            radioButtonPJ.TabStop = true;
+            radioButtonPJ.Text = "Pessoa Jurídica";
+            radioButtonPJ.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // checkBoxEstrageiro
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = SystemColors.ActiveCaptionText;
-            checkBox1.ForeColor = SystemColors.ButtonHighlight;
-            checkBox1.Location = new Point(23, 237);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(85, 19);
-            checkBox1.TabIndex = 18;
-            checkBox1.Text = "Estrangeiro";
-            checkBox1.UseVisualStyleBackColor = false;
+            checkBoxEstrageiro.AutoSize = true;
+            checkBoxEstrageiro.BackColor = SystemColors.ActiveCaptionText;
+            checkBoxEstrageiro.ForeColor = SystemColors.ButtonHighlight;
+            checkBoxEstrageiro.Location = new Point(23, 237);
+            checkBoxEstrageiro.Name = "checkBoxEstrageiro";
+            checkBoxEstrageiro.Size = new Size(85, 19);
+            checkBoxEstrageiro.TabIndex = 18;
+            checkBoxEstrageiro.Text = "Estrangeiro";
+            checkBoxEstrageiro.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -352,13 +352,13 @@
             Bairro.Size = new Size(171, 23);
             Bairro.TabIndex = 30;
             // 
-            // Estado
+            // EstadoBox
             // 
-            Estado.FormattingEnabled = true;
-            Estado.Location = new Point(357, 408);
-            Estado.Name = "Estado";
-            Estado.Size = new Size(100, 23);
-            Estado.TabIndex = 31;
+            EstadoBox.FormattingEnabled = true;
+            EstadoBox.Location = new Point(357, 408);
+            EstadoBox.Name = "EstadoBox";
+            EstadoBox.Size = new Size(100, 23);
+            EstadoBox.TabIndex = 31;
             // 
             // label15
             // 
@@ -412,7 +412,7 @@
             Controls.Add(label16);
             Controls.Add(Cep);
             Controls.Add(label15);
-            Controls.Add(Estado);
+            Controls.Add(EstadoBox);
             Controls.Add(Bairro);
             Controls.Add(label14);
             Controls.Add(label13);
@@ -425,9 +425,9 @@
             Controls.Add(Logradouro);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(checkBox1);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
+            Controls.Add(checkBoxEstrageiro);
+            Controls.Add(radioButtonPJ);
+            Controls.Add(radioButtonPF);
             Controls.Add(label7);
             Controls.Add(Etnia);
             Controls.Add(textBoxNomeSocial);
@@ -464,9 +464,9 @@
         private TextBox textBoxNomeSocial;
         private ComboBox Etnia;
         private Label label7;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private CheckBox checkBox1;
+        private RadioButton radioButtonPF;
+        private RadioButton radioButtonPJ;
+        private CheckBox checkBoxEstrageiro;
         private Label label8;
         private Label label9;
         private TextBox Logradouro;
@@ -479,7 +479,7 @@
         private Label label13;
         private Label label14;
         private TextBox Bairro;
-        private ComboBox Estado;
+        private ComboBox EstadoBox;
         private Label label15;
         private MaskedTextBox Cep;
         private Label label16;

@@ -1,15 +1,26 @@
+using CadastroCliente;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+
 namespace CadastroCliente
 {
     public partial class Form1 : Form
     {
-
+        List<EndereçoCliente> Endereço = [];
         List<Cliente> Clientes = [];
+        List<int> ListaID = new List<int>();
+
 
 
         public Form1()
         {
 
             InitializeComponent();
+            Genero.Items.Add("Masculino");
+            Genero.Items.Add("Feminino");
+            Genero.Items.Add("Outros");
+
+
             // Cliente 1
             EndereçoCliente EndereçoBruno = new() { Logradouro = "Rua 123", Numero = "15", Cep = "656578", Bairro = "Morro do Alemão", Estado = "São Paulo", Municipio = "São Paulo", Complemento = "C" };
             Cliente Bruno = new Cliente() { ID = 01, Nome = "Bruno", DataNascimento = "12/03/1998", GeneroCliente = GeneroCliente.Masculino, Endereco = EndereçoBruno, Tipo = TipoCliente.PF, Estrageiro = false, Etnia = global::Etnia.Negro };
@@ -30,36 +41,139 @@ namespace CadastroCliente
 
         }
 
+
+
+
         public bool ValidarCampo()
         {
             if (string.IsNullOrEmpty(textBoxNome.Text))
             {
-                MessageBox.Show("O Nome é Obrigatório","Erro",MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                MessageBox.Show("O Nome é Obrigatório", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (textBoxNome.Text.Contains("1,2,3,4,5,6,7,8,9,0,@,$,#,&,%,!"))
+            {
+                MessageBox.Show("!!!!!O Nome não pode Conter Numeros ou Caracteres Especiais!!!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!radioButtonPF.Checked || radioButtonPJ.Checked)
+            {
+                MessageBox.Show("!!!Selecione Todas as Opções!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string Email = textBoxEmail.Text;
+
+            if (string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrWhiteSpace(textBoxEmail.Text))
+            {
+                MessageBox.Show("!!!Campo De Email é Obrigatório!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (!Email.Contains("@"))
+            {
+                MessageBox.Show("!!!O Email Deve Conter '@'!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrEmpty(DataNascimento.Text))
+            {
+                DataNascimento.Text = "00/00/0000";
+                MessageBox.Show("!!!Data de Nascimento em Branco!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (Regex.IsMatch(DataNascimento.Text, "@,/,$,"))
+            {
+                MessageBox.Show("!!!Não e Permitido o Uso de Caracteres!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrEmpty(Telefone.Text))
+            {
+                Telefone.Text = "(00) 00000000";
+                MessageBox.Show("!!! Numero  de Telefone Obrigatorio!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (Genero.SelectedIndex == -1)
+            {
+                MessageBox.Show("!!!Selecione uma da Opções!!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
+
+
+
         }
+
+        public int ProximoID = 1;
+
+        public int GeraID()
+        {
+            int NovoID = ProximoID;
+            ProximoID++;
+            return NovoID;
+
+        }
+
 
         public string AtualizarCampos()
         {
-           textBoxNome.Clear();
-           textBoxEmail.Clear();
-           textBoxNomeSocial.Clear();
-           Telefone.Clear();
-           Municipio.Clear();
-           Estado.Items.Clear();
-           Genero.Items.Clear();
-           Etnia.Items.Clear();
-            
+            textBoxNome.Clear();
+            textBoxEmail.Clear();
+            textBoxNomeSocial.Clear();
+            Telefone.Clear();
+            Municipio.Clear();
+            EstadoBox.Items.Clear();
+            Genero.Items.Clear();
+            Etnia.Items.Clear();
 
-           
+
+
             return textBoxNome.ToString();
         }
 
+        public string AdicionarCliente ()
+        {
+            GeneroCliente GeneroSelecionado = (GeneroCliente)Genero.SelectedIndex;
+            Etnia EtniaSelecionada = (Etnia)Etnia.SelectedIndex;
+            TipoCliente Tipo = radioButtonPF.Checked ? TipoCliente.PF : TipoCliente.Pj;
+
+            var Email = textBoxEmail.Text;
+
+            Clientes.Add(new Cliente() { Nome = textBoxNome.Text, DataNascimento = DataNascimento.Text, GeneroCliente = GeneroSelecionado, Etnia = EtniaSelecionada, Tipo = Tipo, Estrageiro = checkBoxEstrageiro.Checked });
+            Endereço.Add(new EndereçoCliente() { Bairro = Bairro.Text, Cep = Cep.Text, Complemento = Complemento.Text, Estado = EstadoBox.Text, Municipio = Municipio.Text, Logradouro = Logradouro.Text, Numero = Numero.Text });
+            textBoxEmail.Clear();
+            textBoxNome.Clear();
+            Telefone.Clear();
+            Bairro.Clear();
+            Cep.Clear();
+            Municipio.Clear();
+            Complemento.Clear();
+
+            foreach (var clientes in Clientes)
+            {
+                if (Email.Equals(Email, StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("!!!Esse Email Ja Foi Cadastrado!!!","Erro",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                }
+
+
+            }
+            return textBoxNome.Text;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+          
+            ValidarCampo();
+            AdicionarCliente();
+            GeraID();
+            
+            
         }
+
+
+
     }
 }
+  
