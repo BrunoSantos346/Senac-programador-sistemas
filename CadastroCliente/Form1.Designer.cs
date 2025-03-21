@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             textBoxNome = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -63,7 +64,10 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             label13 = new Label();
+            dataGridView1 = new DataGridView();
+            label17 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // textBoxNome
@@ -418,7 +422,7 @@
             button1.FlatAppearance.BorderColor = Color.Black;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(557, 583);
+            button1.Location = new Point(607, 522);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(106, 49);
@@ -449,13 +453,36 @@
             label13.TabIndex = 37;
             label13.Text = "Município";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = SystemColors.ButtonFace;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = SystemColors.MenuBar;
+            dataGridView1.Location = new Point(12, 600);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(492, 170);
+            dataGridView1.TabIndex = 38;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(625, 575);
+            label17.Name = "label17";
+            label17.Size = new Size(63, 20);
+            label17.TabIndex = 39;
+            label17.Text = "Cadastrar";
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.ButtonFace;
             BackgroundImage = Properties.Resources.Capturar1;
             ClientSize = new Size(734, 811);
+            Controls.Add(label17);
+            Controls.Add(dataGridView1);
             Controls.Add(label13);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
@@ -493,10 +520,15 @@
             Controls.Add(textBoxNome);
             Font = new Font("Arial Narrow", 11.25F);
             ForeColor = SystemColors.ActiveCaptionText;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Clientes";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -538,5 +570,7 @@
         private Button button1;
         private PictureBox pictureBox1;
         private Label label13;
+        private DataGridView dataGridView1;
+        private Label label17;
     }
 }
