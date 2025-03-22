@@ -27,6 +27,8 @@ namespace CadastroCliente
         public EndereçoCliente Endereco { get; set; }
         public Etnia Etnia { get; set; }
         public GeneroCliente GeneroCliente { get; set; }
+        public string Email {  get; set; }
+        public string Telefone { get; set; }
         
         public bool Estrageiro { get; set; }
 

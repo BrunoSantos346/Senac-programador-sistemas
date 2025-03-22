@@ -197,7 +197,7 @@
             // Etnia
             // 
             Etnia.FormattingEnabled = true;
-            Etnia.Items.AddRange(new object[] { "Negro(a)", "Branco(a)", "Outros" });
+            Etnia.Items.AddRange(new object[] { "Negro", "Branco", "Outros" });
             Etnia.Location = new Point(597, 261);
             Etnia.Margin = new Padding(3, 4, 3, 4);
             Etnia.Name = "Etnia";
@@ -299,6 +299,7 @@
             Numero.Name = "Numero";
             Numero.Size = new Size(171, 25);
             Numero.TabIndex = 22;
+            Numero.KeyPress += Numero_KeyPress;
             // 
             // Complemento
             // 
@@ -374,6 +375,8 @@
             // 
             // EstadoBox
             // 
+            EstadoBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            EstadoBox.AutoCompleteSource = AutoCompleteSource.ListItems;
             EstadoBox.FormattingEnabled = true;
             EstadoBox.Items.AddRange(new object[] { "", "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF)", "Espírito Santo (ES)", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" });
             EstadoBox.Location = new Point(404, 449);
@@ -417,6 +420,7 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.Transparent;
             button1.BackgroundImage = Properties.Resources.Button_Add_01_25115;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderColor = Color.Black;
@@ -432,7 +436,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.ButtonFace;
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Cursor = Cursors.Cross;
             pictureBox1.ErrorImage = Properties.Resources.User_80_icon_icons_com_57249__1_;
@@ -484,7 +488,6 @@
             Controls.Add(label17);
             Controls.Add(dataGridView1);
             Controls.Add(label13);
-            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(label16);
             Controls.Add(Cep);
@@ -518,6 +521,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBoxNome);
+            Controls.Add(pictureBox1);
             Font = new Font("Arial Narrow", 11.25F);
             ForeColor = SystemColors.ActiveCaptionText;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -555,7 +559,6 @@
         private Label label8;
         private Label label9;
         private TextBox Logradouro;
-        private TextBox Numero;
         private TextBox Complemento;
         private TextBox Municipio;
         private Label label10;
@@ -572,5 +575,6 @@
         private Label label13;
         private DataGridView dataGridView1;
         private Label label17;
+        private TextBox Numero;
     }
 }
