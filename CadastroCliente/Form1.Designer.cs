@@ -5,20 +5,13 @@
         /// <summary>
         ///  Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components;
 
         /// <summary>
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       
 
         #region Windows Form Designer generated code
 
@@ -66,6 +59,7 @@
             label13 = new Label();
             dataGridView1 = new DataGridView();
             label17 = new Label();
+            Erro = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -479,12 +473,21 @@
             label17.TabIndex = 39;
             label17.Text = "Cadastrar";
             // 
+            // Erro
+            // 
+            Erro.AutoSize = true;
+            Erro.Location = new Point(545, 676);
+            Erro.Name = "Erro";
+            Erro.Size = new Size(0, 20);
+            Erro.TabIndex = 40;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.ButtonFace;
             BackgroundImage = Properties.Resources.Capturar1;
             ClientSize = new Size(734, 811);
+            Controls.Add(Erro);
             Controls.Add(label17);
             Controls.Add(dataGridView1);
             Controls.Add(label13);
@@ -576,5 +579,6 @@
         private DataGridView dataGridView1;
         private Label label17;
         private TextBox Numero;
+        private Label Erro;
     }
 }
