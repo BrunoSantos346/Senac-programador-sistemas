@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace CadastroCliente
 {
     public partial class Form1 : Form
@@ -75,14 +77,14 @@ namespace CadastroCliente
             }
 
 
-            if (!string.IsNullOrEmpty(DataNascimento.Text))
+            if (DataNascimento.Text.Contains(" "))
             {
                 Erro.Text = "O campo Data e Obrigatório";
                 return false;
             }
             
 
-            if (!string.IsNullOrEmpty(TelefoneBox.Text))
+            if (string.IsNullOrEmpty(TelefoneBox.Text))
             {
                 Erro.Text = "Insira um Telefone Valído";
                 return false;
@@ -209,13 +211,19 @@ namespace CadastroCliente
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (!ValidarCampo() || ValidarTelefone() || ValidarEmail()) { return; }
+            if (ValidarCampo() || ValidarTelefone() || ValidarEmail()) { return; }
             AdicionarCliente();
             BindingSource.ResetBindings(false);
+            dataGridView1.Refresh();
+            BindingSource.DataSource = Clientes;
+            dataGridView1.DataSource = BindingSource;
 
 
 
-            
+
+
+
+
         }
 
         private void Numero_KeyPress(object sender, KeyPressEventArgs e)
@@ -242,21 +250,6 @@ namespace CadastroCliente
             return true;
 
 
-        }
-        public string AtualizarCampos()
-        {
-            textBoxNome.Clear();
-            textBoxEmail.Clear();
-            textBoxNomeSocial.Clear();
-            TelefoneBox.Clear();
-            Municipio.Clear();
-            EstadoBox.Items.Clear();
-            Genero.Items.Clear();
-            Etnia.Items.Clear();
-
-
-
-            return textBoxNome.ToString();
         }
     }
 }
