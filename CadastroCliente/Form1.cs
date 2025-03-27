@@ -215,8 +215,7 @@ namespace CadastroCliente
             AdicionarCliente();
             BindingSource.ResetBindings(false);
             dataGridView1.Refresh();
-            BindingSource.DataSource = Clientes;
-            dataGridView1.DataSource = BindingSource;
+            
 
 
 
