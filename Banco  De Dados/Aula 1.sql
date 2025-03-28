@@ -17,8 +17,31 @@ FROM
     email, 
     senha)
     
-    VALUES (
-    'Bruno',
+    VALUES ('Bruno',
     'Bruno@Senac',
     'Bruno123');
+    
+    INSERT INTO usuario ( nome, 
+    email, 
+    senha)
+    
+    values(
+    
+    'Neymar jr',
+    'Neymarjr@Email.com',
+    'Brun@'
+    ),
+    ('Pablo vitar','P.vitar@email.com','senha@Fort3'),
+    ('Maria madalena','Maria@email.com','Maria12');
+    
+    select * FROM usuario
+    
+    where email like'%email.com';
+    
+    
+   
+    
+   
+    
+    
     

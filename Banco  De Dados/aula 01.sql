@@ -45,7 +45,7 @@ SELECT
  FROM
  Aula01
  WHERE  
- modelo = 'SUV';
+ modelo = 'SUV' and '1999';
 
 
  
