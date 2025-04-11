@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using CadastroCliente.Dominío;
 
 namespace CadastroCliente
 {

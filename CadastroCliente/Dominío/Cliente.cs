@@ -23,7 +23,7 @@ namespace CadastroCliente
         public TipoCliente Tipo { get; set; }
         public int ID { get; set; }
         public string Nome  { get; set; }
-        public string DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
         public EndereçoCliente Endereco { get; set; }
         public Etnia Etnia { get; set; }
         public GeneroCliente GeneroCliente { get; set; }
