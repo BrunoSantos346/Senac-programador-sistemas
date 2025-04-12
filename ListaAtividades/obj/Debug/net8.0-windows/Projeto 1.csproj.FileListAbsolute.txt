@@ -1,0 +1,16 @@
+D:\Curso de Progamação\Projeto 1\bin\Debug\net8.0-windows\Projeto 1.exe
+D:\Curso de Progamação\Projeto 1\bin\Debug\net8.0-windows\Projeto 1.deps.json
+D:\Curso de Progamação\Projeto 1\bin\Debug\net8.0-windows\Projeto 1.runtimeconfig.json
+D:\Curso de Progamação\Projeto 1\bin\Debug\net8.0-windows\Projeto 1.dll
+D:\Curso de Progamação\Projeto 1\bin\Debug\net8.0-windows\Projeto 1.pdb
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto_1.Form1.resources
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.csproj.GenerateResource.cache
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.AssemblyInfoInputs.cache
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.AssemblyInfo.cs
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.csproj.CoreCompileInputs.cache
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.dll
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\refint\Projeto 1.dll
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.pdb
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\Projeto 1.genruntimeconfig.cache
+D:\Curso de Progamação\Projeto 1\obj\Debug\net8.0-windows\ref\Projeto 1.dll

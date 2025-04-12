@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using CadastroCliente.Dominío;
+using Microsoft.VisualBasic;
 
 namespace CadastroCliente
 {
@@ -9,7 +10,7 @@ namespace CadastroCliente
         List<Cliente> Clientes = [];
         private readonly BindingSource BindingSource = [];
 
-
+        
 
 
 
@@ -18,6 +19,7 @@ namespace CadastroCliente
 
             InitializeComponent();
 
+            DateTime dataFormatada = DateTime.ParseExact("10-04-2025", "dd-MM-yyyy", null);
 
 
 
@@ -28,19 +30,19 @@ namespace CadastroCliente
 
             // Cliente 1
             EndereçoCliente EndereçoBruno = new() { Logradouro = "Rua 123", Numero = "15", Cep = "656578", Bairro = "Morro do Alemão", Estado = "São Paulo", Municipio = "São Paulo", Complemento = "C" };
-            Cliente Bruno = new Cliente() { ID = 01, Nome = "Bruno", DataNascimento = "12/03/1998", GeneroCliente = GeneroCliente.Masculino, Endereco = EndereçoBruno, Tipo = TipoCliente.PF, Estrageiro = false, Etnia = global::Etnia.Negro };
+            Cliente Bruno = new Cliente() { ID = 01, Nome = "Bruno", DataNascimento =dataFormatada, GeneroCliente = GeneroCliente.Masculino, Endereco = EndereçoBruno, Tipo = TipoCliente.PF, Estrageiro = false, Etnia = global::Etnia.Negro };
             Clientes.Add(Bruno);
 
             // Cliente 2
 
             EndereçoCliente EndereçoNala = new EndereçoCliente() { Logradouro = "Rua limo", Numero = "20", Cep = "123456", Bairro = "Morro da Rocinha", Estado = "Rio de Janeiro", Municipio = "Rio Janeiro", Complemento = "B" };
-            Cliente Nala = new Cliente() { ID = 02, Nome = "Nala", DataNascimento = "30/05/71", GeneroCliente = GeneroCliente.Feminino, Endereco = EndereçoNala, Tipo = TipoCliente.PF, Estrageiro = false, Etnia = global::Etnia.Branco };
+            Cliente Nala = new Cliente() { ID = 02, Nome = "Nala", DataNascimento =dataFormatada, GeneroCliente = GeneroCliente.Feminino, Endereco = EndereçoNala, Tipo = TipoCliente.PF, Estrageiro = false, Etnia = global::Etnia.Branco };
             Clientes.Add(Nala);
 
             //Cliente 3
 
             EndereçoCliente EndereçoAndersonSilva = new EndereçoCliente() { Bairro = "Meier", Logradouro = "Rua Dos Anjos", Cep = "898786", Complemento = "Casa 2", Estado = "Rio de Janeiro", Municipio = "Rio Janeiro", Numero = "456" };
-            Cliente AndersonSilva = new Cliente() { Nome = "Anderson", DataNascimento = "25/07/54", Endereco = EndereçoAndersonSilva, Tipo = TipoCliente.Pj, GeneroCliente = GeneroCliente.Masculino, Estrageiro = false, Etnia = global::Etnia.Negro };
+            Cliente AndersonSilva = new Cliente() { Nome = "Anderson", DataNascimento = dataFormatada, Endereco = EndereçoAndersonSilva, Tipo = TipoCliente.Pj, GeneroCliente = GeneroCliente.Masculino, Estrageiro = false, Etnia = global::Etnia.Negro };
             Clientes.Add(AndersonSilva);
 
             BindingSource.DataSource = Clientes;
@@ -83,7 +85,7 @@ namespace CadastroCliente
                 Erro.Text = "O campo Data e Obrigatório";
                 return false;
             }
-            
+
 
             if (string.IsNullOrEmpty(TelefoneBox.Text))
             {
@@ -95,8 +97,8 @@ namespace CadastroCliente
 
             if (Genero.SelectedIndex == -1)
             {
-               Erro.Text = "Informe Seu Genêro";
-               return false;
+                Erro.Text = "Informe Seu Genêro";
+                return false;
             }
             if (Etnia.SelectedIndex == -1)
             {
@@ -163,6 +165,7 @@ namespace CadastroCliente
             GeneroCliente GeneroSelecionado = (GeneroCliente)Genero.SelectedIndex;
             Etnia EtniaSelecionada = (Etnia)Etnia.SelectedIndex;
             TipoCliente Tipo = radioButtonPF.Checked ? TipoCliente.PF : TipoCliente.Pj;
+            var DataNascimento = DateTime.ParseExact("10-04-2025", "dd-MM-yyyy", null);
 
             var Email = textBoxEmail.Text;
             var Telefone = TelefoneBox.Text;
@@ -173,17 +176,16 @@ namespace CadastroCliente
                 Email = textBoxEmail.Text,
                 Telefone = TelefoneBox.Text,
                 Nome = textBoxNome.Text,
-                DataNascimento = DataNascimento.Text,
+                DataNascimento = DataNascimento,
                 GeneroCliente
                 = GeneroSelecionado,
                 Etnia = EtniaSelecionada,
                 Tipo = Tipo,
                 Estrageiro = checkBoxEstrageiro.Checked,
-                Endereco =  { Bairro =  Bairro.Text, Cep = Cep.Text, Complemento = Complemento.Text, Estado = EstadoBox.Text, Municipio = Municipio.Text, Logradouro = Logradouro.Text, Numero = Numero.Text }
-
+                Endereco = { Bairro = Bairro.Text, Cep = Cep.Text, Complemento = Complemento.Text, Estado = EstadoBox.Text, Municipio = Municipio.Text, Logradouro = Logradouro.Text, Numero = Numero.Text }
 
             });
-            
+
 
 
 
@@ -216,7 +218,7 @@ namespace CadastroCliente
             AdicionarCliente();
             BindingSource.ResetBindings(false);
             dataGridView1.Refresh();
-            
+
 
 
 
@@ -249,6 +251,11 @@ namespace CadastroCliente
             }
             return true;
 
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }
