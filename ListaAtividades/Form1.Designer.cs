@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            AtividadeemAndamento = new TextBox();
+            TxTAtividadeemAndamento = new TextBox();
             buttonFinalizar = new Button();
             dataGridViewAtividades = new DataGridView();
             buttonAtualizar = new Button();
             buttonCriar = new Button();
+            labelErro = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAtividades).BeginInit();
             SuspendLayout();
             // 
-            // AtividadeemAndamento
+            // TxTAtividadeemAndamento
             // 
-            AtividadeemAndamento.BackColor = SystemColors.ButtonHighlight;
-            AtividadeemAndamento.Location = new Point(12, 30);
-            AtividadeemAndamento.Name = "AtividadeemAndamento";
-            AtividadeemAndamento.ReadOnly = true;
-            AtividadeemAndamento.Size = new Size(527, 23);
-            AtividadeemAndamento.TabIndex = 0;
-            
+            TxTAtividadeemAndamento.BackColor = SystemColors.ButtonHighlight;
+            TxTAtividadeemAndamento.Location = new Point(12, 30);
+            TxTAtividadeemAndamento.Name = "TxTAtividadeemAndamento";
+            TxTAtividadeemAndamento.ReadOnly = true;
+            TxTAtividadeemAndamento.Size = new Size(527, 23);
+            TxTAtividadeemAndamento.TabIndex = 0;
             // 
             // buttonFinalizar
             // 
@@ -57,12 +57,18 @@
             buttonFinalizar.TabIndex = 1;
             buttonFinalizar.Text = "Finalizar";
             buttonFinalizar.UseVisualStyleBackColor = false;
+            buttonFinalizar.Click += buttonFinalizar_Click;
             // 
             // dataGridViewAtividades
             // 
+            dataGridViewAtividades.AllowUserToAddRows = false;
+            dataGridViewAtividades.AllowUserToDeleteRows = false;
+            dataGridViewAtividades.AllowUserToResizeColumns = false;
+            dataGridViewAtividades.AllowUserToResizeRows = false;
             dataGridViewAtividades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewAtividades.Location = new Point(12, 95);
             dataGridViewAtividades.Name = "dataGridViewAtividades";
+            dataGridViewAtividades.ReadOnly = true;
             dataGridViewAtividades.Size = new Size(418, 328);
             dataGridViewAtividades.TabIndex = 2;
             // 
@@ -77,6 +83,7 @@
             buttonAtualizar.TabIndex = 1;
             buttonAtualizar.Text = "Atualizar";
             buttonAtualizar.UseVisualStyleBackColor = false;
+            buttonAtualizar.Click += buttonAtualizar_Click;
             // 
             // buttonCriar
             // 
@@ -89,6 +96,16 @@
             buttonCriar.TabIndex = 1;
             buttonCriar.Text = "Criar";
             buttonCriar.UseVisualStyleBackColor = false;
+            buttonCriar.Click += buttonCriar_Click;
+            // 
+            // labelErro
+            // 
+            labelErro.AutoSize = true;
+            labelErro.Location = new Point(19, 429);
+            labelErro.Name = "labelErro";
+            labelErro.Size = new Size(38, 15);
+            labelErro.TabIndex = 3;
+            labelErro.Text = "label1";
             // 
             // Form1
             // 
@@ -96,11 +113,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelErro);
             Controls.Add(dataGridViewAtividades);
             Controls.Add(buttonCriar);
             Controls.Add(buttonAtualizar);
             Controls.Add(buttonFinalizar);
-            Controls.Add(AtividadeemAndamento);
+            Controls.Add(TxTAtividadeemAndamento);
             Name = "Form1";
             Text = "Lista de Atividades";
             Load += Form1_Load;
@@ -111,10 +129,11 @@
 
         #endregion
 
-        private TextBox AtividadeemAndamento;
+        private TextBox TxTAtividadeemAndamento;
         private Button buttonFinalizar;
         private DataGridView dataGridViewAtividades;
         private Button buttonAtualizar;
         private Button buttonCriar;
+        private Label labelErro;
     }
 }

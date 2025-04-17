@@ -33,3 +33,4 @@ D:\Curso de Progamação\Senac-programador-sistemas\ListaAtividades\obj\Debug\ne
 D:\Curso de Progamação\Senac-programador-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.pdb
 D:\Curso de Progamação\Senac-programador-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.genruntimeconfig.cache
 D:\Curso de Progamação\Senac-programador-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ref\ListaAtividades.dll
+D:\Curso de Progamação\Senac-programador-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.CriarAtividade.resources

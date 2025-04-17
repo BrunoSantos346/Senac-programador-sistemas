@@ -42,9 +42,17 @@ namespace ListaAtividades.Dominío
                 return false;
             }
 
+           
             Atividade AtividaEmAndamento = BuscarAtividadeEmAndamento();
             Situacao NovaSituacao = BuscarProximaSituação();
 
+            if (AtividaEmAndamento.Id > 0 && AtividaEmAndamento.situacao ==NovaSituacao)
+            {
+                return false;
+            }
+
+            repositorio.AtualizarSituacao(Id, (int)NovaSituacao);
+           
 
             return true;
         }
@@ -54,7 +62,7 @@ namespace ListaAtividades.Dominío
         }
         private bool ValidarTitulo()
         {
-            return string.IsNullOrWhiteSpace(Titulo);
+            return !string.IsNullOrWhiteSpace(Titulo);
         }
         private bool ValidarId()
         {
@@ -76,6 +84,8 @@ namespace ListaAtividades.Dominío
             }
           return Situacao.Concluido;
         }
+       
+
             
     }
 }
