@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CadastroProduto")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+569cf4fc765fcb6a9ef183909b8b9e948bb4cdb6")]
-[assembly: System.Reflection.AssemblyProductAttribute("CadastroProduto")]
-[assembly: System.Reflection.AssemblyTitleAttribute("CadastroProduto")]
+[assembly: System.Reflection.AssemblyProductAttribute("ProjetoPI")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ProjetoPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

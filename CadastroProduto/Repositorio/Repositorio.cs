@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadastroProduto.Dominío;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,13 @@ namespace CadastroProduto.Repositorio
                 {
                     cmd.Parameters.AddWithValue("@nome", Nome);
                     cmd.Parameters.AddWithValue("@data_produto", data_produto);
-                    cmd.Parameters.AddWithValue("@preco", preco);
+                    cmd.Parameters.AddWithValue("@preco", preco );
                     cmd.ExecuteNonQuery();
                 }
             }
         }
+
+        
 
         
     }
