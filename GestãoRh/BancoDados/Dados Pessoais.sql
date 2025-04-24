@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS dadospessoais (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nomecompleto VARCHAR(100) NOT NULL,
+cpf VARCHAR(25) NOT NULL,
+rg VARCHAR(15) NOT NULL,
+datadenascimento DATE ,
+genero VARCHAR(40) NOT NULL,
+estadocivil VARCHAR(50) NOT NULL
+
+);
+
+
+
