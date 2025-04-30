@@ -3,7 +3,6 @@ D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\bin\Debug\net8.0-w
 D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\bin\Debug\net8.0-windows\ProjetoPi.runtimeconfig.json
 D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\bin\Debug\net8.0-windows\ProjetoPi.dll
 D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\bin\Debug\net8.0-windows\ProjetoPi.pdb
-D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\obj\Debug\net8.0-windows\ProjetoPi.FormLogin.resources
 D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\obj\Debug\net8.0-windows\ProjetoPi.Properties.Resources.resources
 D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\obj\Debug\net8.0-windows\ProjetoPi.csproj.GenerateResource.cache
 D:\Curso de Progamação\Senac-programador-sistemas\ProjetoPi\obj\Debug\net8.0-windows\ProjetoPi.GeneratedMSBuildEditorConfig.editorconfig
